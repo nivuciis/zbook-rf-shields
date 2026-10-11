@@ -151,29 +151,63 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=
 
+[Document7]
+DocumentPath=zbook-rf-shields-BLE-P1.PcbLib
+AnnotationEnabled=1
+AnnotateStartValue=1
+AnnotationIndexControlEnabled=0
+AnnotateSuffix=
+AnnotateScope=All
+AnnotateOrder=-1
+DoLibraryUpdate=1
+DoDatabaseUpdate=1
+ClassGenCCAutoEnabled=1
+ClassGenCCAutoRoomEnabled=0
+ClassGenNCAutoScope=None
+DItemRevisionGUID=
+GenerateClassCluster=0
+DocumentUniqueId=NBAOCMQB
+
+[Document8]
+DocumentPath=zbook-rf-shields-BLE-P1.SchLib
+AnnotationEnabled=1
+AnnotateStartValue=1
+AnnotationIndexControlEnabled=0
+AnnotateSuffix=
+AnnotateScope=All
+AnnotateOrder=-1
+DoLibraryUpdate=1
+DoDatabaseUpdate=1
+ClassGenCCAutoEnabled=1
+ClassGenCCAutoRoomEnabled=0
+ClassGenNCAutoScope=None
+DItemRevisionGUID=
+GenerateClassCluster=0
+DocumentUniqueId=ZXRHXHET
+
 [Parameter1]
-Name=Website
-Value=https://edge.ufal.br
+Name=CheckedProject
+Value=Vinicius Carvalho
 
 [Parameter2]
-Name=VersionRevision
-Value=P1
-
-[Parameter3]
-Name=TitleProject
-Value=Shield BLE
-
-[Parameter4]
-Name=DesignedProject
-Value=Caio Oliveira
-
-[Parameter5]
 Name=Company
 Value=Universidade Federal de Alagoas
 
+[Parameter3]
+Name=DesignedProject
+Value=Caio Oliveira
+
+[Parameter4]
+Name=TitleProject
+Value=Shield BLE
+
+[Parameter5]
+Name=VersionRevision
+Value=P1
+
 [Parameter6]
-Name=CheckedProject
-Value=Vinicius Carvalho
+Name=Website
+Value=https://edge.ufal.br
 
 [Configuration1]
 Name=Sources
