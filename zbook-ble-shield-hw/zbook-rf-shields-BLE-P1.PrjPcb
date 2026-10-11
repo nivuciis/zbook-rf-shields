@@ -84,23 +84,6 @@ GenerateClassCluster=0
 DocumentUniqueId=HJUVQPJE
 
 [Document3]
-DocumentPath=zbook-rf-shields-BLE-P1.SchDoc
-AnnotationEnabled=1
-AnnotateStartValue=1
-AnnotationIndexControlEnabled=0
-AnnotateSuffix=
-AnnotateScope=All
-AnnotateOrder=1
-DoLibraryUpdate=1
-DoDatabaseUpdate=1
-ClassGenCCAutoEnabled=1
-ClassGenCCAutoRoomEnabled=0
-ClassGenNCAutoScope=None
-DItemRevisionGUID=
-GenerateClassCluster=0
-DocumentUniqueId=PDYOXBGB
-
-[Document4]
 DocumentPath=[01] - COVER PAGE.SchDoc
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -117,7 +100,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=OVSINXHK
 
-[Document5]
+[Document4]
 DocumentPath=[02] - BLOCK DIAGRAM.SchDoc
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -134,7 +117,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=CQERCWVI
 
-[Document6]
+[Document5]
 DocumentPath=[04] - REVISION HISTORY.SchDoc
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -151,29 +134,46 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=SDIGXDSA
 
+[Document6]
+DocumentPath=zbook-rf-shields-BLE-P1.BomDoc
+AnnotationEnabled=1
+AnnotateStartValue=1
+AnnotationIndexControlEnabled=0
+AnnotateSuffix=
+AnnotateScope=All
+AnnotateOrder=-1
+DoLibraryUpdate=1
+DoDatabaseUpdate=1
+ClassGenCCAutoEnabled=1
+ClassGenCCAutoRoomEnabled=0
+ClassGenNCAutoScope=None
+DItemRevisionGUID=
+GenerateClassCluster=0
+DocumentUniqueId=
+
 [Parameter1]
-Name=CheckedProject
-Value=Vinicius Carvalho
+Name=Website
+Value=https://edge.ufal.br
 
 [Parameter2]
-Name=Company
-Value=Universidade Federal de Alagoas
-
-[Parameter3]
-Name=DesignedProject
-Value=CAIO OLIVEIRA
-
-[Parameter4]
-Name=TitleProject
-Value=Shield BLE
-
-[Parameter5]
 Name=VersionRevision
 Value=P1
 
+[Parameter3]
+Name=TitleProject
+Value=Shield BLE
+
+[Parameter4]
+Name=DesignedProject
+Value=Caio Oliveira
+
+[Parameter5]
+Name=Company
+Value=Universidade Federal de Alagoas
+
 [Parameter6]
-Name=Website
-Value=https://edge.ufal.br
+Name=CheckedProject
+Value=Vinicius Carvalho
 
 [Configuration1]
 Name=Sources
