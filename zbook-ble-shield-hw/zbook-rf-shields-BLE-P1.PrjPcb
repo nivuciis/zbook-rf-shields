@@ -67,7 +67,7 @@ GenerateClassCluster=0
 DocumentUniqueId=YXFBTOOD
 
 [Document2]
-DocumentPath=zbook-rf-shields-BLE-P1.SchDoc
+DocumentPath=[03] - BLE MODULE AND CONNECTIONS.SchDoc
 AnnotationEnabled=1
 AnnotateStartValue=1
 AnnotationIndexControlEnabled=0
@@ -82,6 +82,98 @@ ClassGenNCAutoScope=None
 DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=HJUVQPJE
+
+[Document3]
+DocumentPath=zbook-rf-shields-BLE-P1.SchDoc
+AnnotationEnabled=1
+AnnotateStartValue=1
+AnnotationIndexControlEnabled=0
+AnnotateSuffix=
+AnnotateScope=All
+AnnotateOrder=1
+DoLibraryUpdate=1
+DoDatabaseUpdate=1
+ClassGenCCAutoEnabled=1
+ClassGenCCAutoRoomEnabled=0
+ClassGenNCAutoScope=None
+DItemRevisionGUID=
+GenerateClassCluster=0
+DocumentUniqueId=PDYOXBGB
+
+[Document4]
+DocumentPath=[01] - COVER PAGE.SchDoc
+AnnotationEnabled=1
+AnnotateStartValue=1
+AnnotationIndexControlEnabled=0
+AnnotateSuffix=
+AnnotateScope=All
+AnnotateOrder=2
+DoLibraryUpdate=1
+DoDatabaseUpdate=1
+ClassGenCCAutoEnabled=1
+ClassGenCCAutoRoomEnabled=0
+ClassGenNCAutoScope=None
+DItemRevisionGUID=
+GenerateClassCluster=0
+DocumentUniqueId=OVSINXHK
+
+[Document5]
+DocumentPath=[02] - BLOCK DIAGRAM.SchDoc
+AnnotationEnabled=1
+AnnotateStartValue=1
+AnnotationIndexControlEnabled=0
+AnnotateSuffix=
+AnnotateScope=All
+AnnotateOrder=3
+DoLibraryUpdate=1
+DoDatabaseUpdate=1
+ClassGenCCAutoEnabled=1
+ClassGenCCAutoRoomEnabled=0
+ClassGenNCAutoScope=None
+DItemRevisionGUID=
+GenerateClassCluster=0
+DocumentUniqueId=CQERCWVI
+
+[Document6]
+DocumentPath=[04] - REVISION HISTORY.SchDoc
+AnnotationEnabled=1
+AnnotateStartValue=1
+AnnotationIndexControlEnabled=0
+AnnotateSuffix=
+AnnotateScope=All
+AnnotateOrder=4
+DoLibraryUpdate=1
+DoDatabaseUpdate=1
+ClassGenCCAutoEnabled=1
+ClassGenCCAutoRoomEnabled=0
+ClassGenNCAutoScope=None
+DItemRevisionGUID=
+GenerateClassCluster=0
+DocumentUniqueId=SDIGXDSA
+
+[Parameter1]
+Name=CheckedProject
+Value=Vinicius Carvalho
+
+[Parameter2]
+Name=Company
+Value=Universidade Federal de Alagoas
+
+[Parameter3]
+Name=DesignedProject
+Value=CAIO OLIVEIRA
+
+[Parameter4]
+Name=TitleProject
+Value=Shield BLE
+
+[Parameter5]
+Name=VersionRevision
+Value=P1
+
+[Parameter6]
+Name=Website
+Value=https://edge.ufal.br
 
 [Configuration1]
 Name=Sources
