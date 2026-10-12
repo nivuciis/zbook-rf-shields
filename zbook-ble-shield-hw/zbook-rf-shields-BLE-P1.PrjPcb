@@ -186,28 +186,40 @@ GenerateClassCluster=0
 DocumentUniqueId=ZXRHXHET
 
 [Parameter1]
-Name=CheckedProject
-Value=Vinicius Carvalho
+Name=Website
+Value=https://edge.ufal.br
 
 [Parameter2]
-Name=Company
-Value=Universidade Federal de Alagoas
+Name=VersionRevision
+Value=P1
 
 [Parameter3]
-Name=DesignedProject
-Value=Caio Oliveira
+Name=VariantProject
+Value=PROTOTYPE
 
 [Parameter4]
 Name=TitleProject
 Value=Shield BLE
 
 [Parameter5]
-Name=VersionRevision
-Value=P1
+Name=ReleaseDate
+Value=26/09/2026
 
 [Parameter6]
-Name=Website
-Value=https://edge.ufal.br
+Name=NumberProject
+Value=ZBOOK-RF-SHIELDS-BLE-P1
+
+[Parameter7]
+Name=DesignedProject
+Value=Caio Oliveira
+
+[Parameter8]
+Name=Company
+Value=Universidade Federal de Alagoas
+
+[Parameter9]
+Name=CheckedProject
+Value=Vinicius Carvalho
 
 [Configuration1]
 Name=Sources

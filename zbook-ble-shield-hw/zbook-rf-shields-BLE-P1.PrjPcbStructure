@@ -1,1 +1,4 @@
-Record=TopLevelDocument|FileName=zbook-rf-shields-BLE-P1.SchDoc|SheetNumber=1
+Record=TopLevelDocument|FileName=[01] - COVER PAGE.SchDoc|SheetNumber=2
+Record=NoMainPathDocument|SourceDocument=[01] - COVER PAGE.SchDoc|FileName=[02] - BLOCK DIAGRAM.SchDoc|SheetNumber=3
+Record=NoMainPathDocument|SourceDocument=[01] - COVER PAGE.SchDoc|FileName=[03] - BLE MODULE AND CONNECTIONS.SchDoc|SheetNumber=1
+Record=NoMainPathDocument|SourceDocument=[01] - COVER PAGE.SchDoc|FileName=[04] - REVISION HISTORY.SchDoc|SheetNumber=4
