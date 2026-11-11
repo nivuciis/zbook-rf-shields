@@ -1,0 +1,5 @@
+name: zbook-rf-shields
+build:
+  settings:
+    board_root: .
+    dts_root: .

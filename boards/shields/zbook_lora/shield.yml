@@ -1,0 +1,9 @@
+# Copyright (c) 2026 Centro de Inovacao EDGE
+# SPDX-License-Identifier: Apache-2.0
+
+shields:
+  - name: zbook_lora
+    full_name: ZBook LoRa Shield (RFM95W)
+    vendor: edge
+    supported_features:
+      - lora

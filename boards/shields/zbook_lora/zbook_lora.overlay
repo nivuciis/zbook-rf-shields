@@ -1,0 +1,32 @@
+/*
+ * Copyright (c) 2026 Centro de Inovacao EDGE
+ * SPDX-License-Identifier: Apache-2.0
+ *
+ * RFM95W (Semtech SX1276) SPI bring-up on the ZBook P2 2x7 expansion header.
+ *
+ * The header's MOSI/MISO/SCLK pins are the board's spi1 bus (MOSI=GP11,
+ * MISO=GP8, SCLK=GP10), shared with the on-board BMI323 IMU. The RFM95 module
+ * gets the second chip select, IO45 (GP45), and is declared as a generic
+ * SPI device: the application talks to its registers directly, without the
+ * Zephyr LoRa driver.
+ *
+ */
+
+#include <zephyr/dt-bindings/gpio/gpio.h>
+
+&spi1_default {
+	group2 {
+		input-schmitt-enable;  
+	};
+};
+
+&spi1 {
+	cs-gpios = <&gpio0 9 GPIO_ACTIVE_LOW>,
+		   <&gpio0_map 45 GPIO_ACTIVE_LOW>;
+
+	rfm95: rfm95@1 {
+		compatible = "vnd,spi-device";
+		reg = <1>;
+		spi-max-frequency = <1000000>;   
+	};
+};

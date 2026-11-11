@@ -1,0 +1,5 @@
+# Copyright (c) 2026 Centro de Inovacao EDGE
+# SPDX-License-Identifier: Apache-2.0
+
+config SHIELD_ZBOOK_LORA
+	def_bool $(shields_list_contains,zbook_lora)

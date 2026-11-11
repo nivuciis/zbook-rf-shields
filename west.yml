@@ -1,0 +1,27 @@
+
+manifest:
+  remotes:
+    - name: zephyrproject-rtos
+      url-base: https://github.com/zephyrproject-rtos
+    - name: zephyr-book
+      url-base: https://github.com/zephyr-book
+
+  projects:
+    - name: zephyr
+      remote: zephyrproject-rtos
+      revision: v4.4.0
+      import:
+        name-allowlist:
+          - cmsis
+          - cmsis_6
+          - fatfs          
+          - hal_rpi_pico   # RP2350B
+          - loramac-node   # RFM95
+
+    - name: zbook
+      remote: zephyr-book
+      revision: main
+      path: modules/zbook
+
+  self:
+    path: zbook-rf-shields
