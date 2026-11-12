@@ -13,7 +13,11 @@
  */
 
 #include <zephyr/dt-bindings/gpio/gpio.h>
-
+/ {
+	aliases {
+		lora0 = &rfm95;
+	};
+};
 &spi1_default {
 	group2 {
 		input-schmitt-enable;  
