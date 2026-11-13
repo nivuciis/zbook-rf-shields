@@ -12,25 +12,33 @@
  *
  */
 
+
 #include <zephyr/dt-bindings/gpio/gpio.h>
+
 / {
 	aliases {
 		lora0 = &rfm95;
 	};
 };
+
+/* Hysteresis on MISO (GP8): tolerant to noisy wiring. */
 &spi1_default {
 	group2 {
-		input-schmitt-enable;  
+		input-schmitt-enable;
 	};
 };
 
 &spi1 {
-	cs-gpios = <&gpio0 9 GPIO_ACTIVE_LOW>,
-		   <&gpio0_map 45 GPIO_ACTIVE_LOW>;
+	cs-gpios = <&gpio0 9 GPIO_ACTIVE_LOW>,      /* reg 0: BMI323 (on-board) */
+		   <&gpio0_map 45 GPIO_ACTIVE_LOW>; /* reg 1: RFM95W NSS (GP45) */
 
-	rfm95: rfm95@1 {
-		compatible = "vnd,spi-device";
+	rfm95: lora@1 {
+		compatible = "semtech,sx1276";
 		reg = <1>;
-		spi-max-frequency = <1000000>;   
+		spi-max-frequency = <1000000>;
+		reset-gpios = <&gpio0_map 1 GPIO_ACTIVE_LOW>;                      /* IO01 */
+		dio-gpios = <&gpio0_map 46 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>;  /* DIO0 = IO46 */
+		power-amplifier-output = "pa-boost";
+		status = "okay";
 	};
 };

@@ -53,5 +53,5 @@ probes:
 
 # Pull this repository and update the west workspace
 update:
-    git pullz
+    git pull
     west update
