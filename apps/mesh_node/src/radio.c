@@ -441,7 +441,11 @@ bool radio_channel_busy(void)
 	reg_read(REG_MODEM_STAT, &stat);
 	k_mutex_unlock(&radio_lock);
 
-	/* bit 0 signal detected, 1 synchronized, 2 RX on-going, 3 header valid */
+	/* bit 0 signal detected, 1 signal synchronized, 3 header info valid.
+	 * Bit 2 ("RX on-going") is left out: it stays set the whole time the
+	 * radio is in RX continuous mode, so it would make the channel look
+	 * busy forever.
+	 */
 	return (stat & 0x0B) != 0;
 }
 

@@ -1,0 +1,11 @@
+# Copyright (c) 2026 Centro de Inovacao EDGE
+# SPDX-License-Identifier: Apache-2.0
+
+mainmenu "ZBook Meshtastic node"
+
+config APP_UI_ENCODER_REVERSE
+	bool "Reverse the rotary encoder direction"
+	help
+	  Enable if turning the encoder clockwise moves the selection up.
+
+source "Kconfig.zephyr"

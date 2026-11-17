@@ -21,6 +21,7 @@
 #include <zephyr/sys/byteorder.h>
 #include <zephyr/logging/log.h>
 
+#include "events.h"
 #include "mesh.h"
 #include "meshtastic.h"
 #include "nodedb.h"
@@ -141,6 +142,26 @@ static uint32_t send_delay_ms(void)
 	return rand_range(1U << CW_MIN) * radio_slot_time_ms();
 }
 
+/* Publish an event for the UI (and any other observer of mesh_event_chan). */
+static void publish(uint8_t type, uint32_t from, uint32_t to, uint32_t id, bool ok,
+		    int16_t rssi, int8_t snr, const char *text)
+{
+	static struct mesh_event ev; /* only the mesh thread publishes */
+
+	memset(&ev, 0, sizeof(ev));
+	ev.type = type;
+	ev.from = from;
+	ev.to = to;
+	ev.id = id;
+	ev.ok = ok;
+	ev.rssi = rssi;
+	ev.snr = snr;
+	if (text) {
+		snprintf(ev.text, sizeof(ev.text), "%s", text);
+	}
+	zbus_chan_pub(&mesh_event_chan, &ev, K_MSEC(20));
+}
+
 /* ------------------------------------------------------------ TX queue */
 
 static int enqueue(const uint8_t *frame, size_t len, bool relay, uint32_t from, uint32_t id,
@@ -237,7 +258,7 @@ static void service_tx(void)
 		return;
 	}
 
-		/* Listen before talk: someone is transmitting, try again a bit later.
+	/* Listen before talk: someone is transmitting, try again a bit later.
 	 * After several attempts in a row, send anyway rather than starve.
 	 */
 	static int busy_streak;
@@ -249,7 +270,6 @@ static void service_tx(void)
 			radio_airtime_ms(64) + send_delay_ms());
 		return;
 	}
-	
 	busy_streak = 0;
 
 	if (radio_transmit(item.data, item.len) == 0) {
@@ -259,6 +279,7 @@ static void service_tx(void)
 		} else {
 			stats.sent++;
 			history_add(item.from, item.id); /* so our own echoes are not new */
+			publish(MESH_EV_SENT, item.from, 0, item.id, true, 0, 0, NULL);
 		}
 	}
 }
@@ -340,6 +361,8 @@ static void check_ack(const struct mesh_packet *p)
 		if (pending_acks[i] != 0 && pending_acks[i] == p->request_id) {
 			pending_acks[i] = 0;
 			k_mutex_unlock(&lock);
+			publish(MESH_EV_ACK, p->from, me.num, p->request_id,
+				p->info.routing_error == 0, 0, 0, NULL);
 			if (p->info.routing_error == 0) {
 				LOG_INF("ACK from %s for message id %08x", name_of(p->from, who, sizeof(who)),
 					p->request_id);
@@ -434,6 +457,14 @@ static void handle_rx(const struct radio_frame *f)
 
 	if (nodedb_update(&pkt, f->rssi, f->snr)) {
 		LOG_INF("New node: %s", name_of(pkt.from, who, sizeof(who)));
+		publish(MESH_EV_NODE, pkt.from, pkt.to, pkt.id, true, f->rssi, f->snr, NULL);
+	} else if (pkt.kind == MESH_INFO_USER || pkt.kind == MESH_INFO_POSITION ||
+		   pkt.kind == MESH_INFO_BATTERY) {
+		publish(MESH_EV_NODE, pkt.from, pkt.to, pkt.id, true, f->rssi, f->snr, NULL);
+	}
+	if (pkt.kind == MESH_INFO_TEXT && (pkt.to == me.num || pkt.to == MESH_BROADCAST)) {
+		publish(MESH_EV_TEXT, pkt.from, pkt.to, pkt.id, true, f->rssi, f->snr,
+			pkt.info.text);
 	}
 	if (live_on || (pkt.kind == MESH_INFO_TEXT)) {
 		print_packet(&pkt, f);
@@ -573,6 +604,14 @@ bool mesh_has_position(void)
 	return pos_set;
 }
 
+bool mesh_get_position(int32_t *lat_i, int32_t *lon_i, int32_t *alt_m)
+{
+	*lat_i = pos_lat;
+	*lon_i = pos_lon;
+	*alt_m = pos_alt;
+	return pos_set;
+}
+
 void mesh_set_relay(bool on)
 {
 	relay_on = on;
@@ -586,6 +625,11 @@ bool mesh_relay_enabled(void)
 void mesh_set_live(bool on)
 {
 	live_on = on;
+}
+
+bool mesh_live_enabled(void)
+{
+	return live_on;
 }
 
 void mesh_get_stats(struct mesh_stats *s)

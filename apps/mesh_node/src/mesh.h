@@ -41,10 +41,13 @@ int mesh_send_position(uint32_t to);
 void mesh_set_position(int32_t lat_i, int32_t lon_i, int32_t alt_m);
 void mesh_clear_position(void);
 bool mesh_has_position(void);
+/** Current fixed position; returns false if none is set. */
+bool mesh_get_position(int32_t *lat_i, int32_t *lon_i, int32_t *alt_m);
 
 void mesh_set_relay(bool on);
 bool mesh_relay_enabled(void);
 void mesh_set_live(bool on);
+bool mesh_live_enabled(void);
 
 void mesh_get_stats(struct mesh_stats *s);
 

@@ -15,4 +15,11 @@ target_sources(app PRIVATE
   src/pb.c
   src/aes128.c
   src/hw_models.c
+  src/events.c
+  src/input.c
+  src/gfx.c
+  src/font5x8.c
+  src/ui_draw.c
+  src/ui.c
+  src/buzzer.c
 )

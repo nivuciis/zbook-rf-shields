@@ -25,6 +25,7 @@
 #include "meshtastic.h"
 #include "nodedb.h"
 #include "radio.h"
+#include "ui.h"
 
 LOG_MODULE_REGISTER(app, LOG_LEVEL_INF);
 
@@ -519,6 +520,7 @@ int main(void)
 	}
 
 	mesh_start();
+	ui_start();
 	k_work_schedule(&nodeinfo_work, K_SECONDS(15));
 	k_work_schedule(&position_work, K_SECONDS(20));
 

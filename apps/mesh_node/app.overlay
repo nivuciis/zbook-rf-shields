@@ -1,0 +1,12 @@
+/*
+ * Copyright (c) 2026 Centro de Inovacao EDGE
+ * SPDX-License-Identifier: Apache-2.0
+ *
+ * mesh_node only: run i2c0 at 400 kHz so a full OLED frame (1 KB) takes
+ * about 25 ms instead of 100 ms. The SSD1306 and the TMP1075 support it.
+ */
+#include <zephyr/dt-bindings/i2c/i2c.h>
+
+&i2c0 {
+	clock-frequency = <I2C_BITRATE_FAST>;
+};
