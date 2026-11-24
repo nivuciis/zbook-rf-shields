@@ -157,7 +157,12 @@ UniqueId=4623d7c3-4e72-4dbd-b682-2926c6a7cfcf
 Description=UFL
 AllowFabrication=0
 ParameterCount=0
-VariationCount=0
+VariationCount=5
+Variation1=Designator=C3|UniqueId=\JEQLTTDY|Kind=1|AlternatePart=
+Variation2=Designator=C4|UniqueId=\LQAQXYPZ|Kind=1|AlternatePart=
+Variation3=Designator=E2|UniqueId=\GYUSLOZC|Kind=1|AlternatePart=
+Variation4=Designator=L2|UniqueId=\BCBOLDMC|Kind=1|AlternatePart=
+Variation5=Designator=R2|UniqueId=\ESGGQJQC|Kind=1|AlternatePart=
 ParamVariationCount=0
 
 [ProjectVariant2]
@@ -165,7 +170,12 @@ UniqueId=d6ea21de-89f8-42f3-b42c-05e3ebb55995
 Description=PCB
 AllowFabrication=0
 ParameterCount=0
-VariationCount=0
+VariationCount=5
+Variation1=Designator=C1|UniqueId=\ROJHGPDU|Kind=1|AlternatePart=
+Variation2=Designator=C2|UniqueId=\USOPWAEA|Kind=1|AlternatePart=
+Variation3=Designator=L1|UniqueId=\MDZBLGYO|Kind=1|AlternatePart=
+Variation4=Designator=R1|UniqueId=\DULELZPG|Kind=1|AlternatePart=
+Variation5=Designator=E1|UniqueId=\GCBWIZZI|Kind=1|AlternatePart=
 ParamVariationCount=0
 
 [GeneratedDocument1]

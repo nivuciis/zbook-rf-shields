@@ -1,0 +1,10 @@
+/*
+ * TX da uart1 (GPIO20) com mais corrente e borda rapida: no kit CH592X o
+ * PA8 (RX do CH592) tambem vai a um segmento do LCD, que carrega a linha.
+ */
+&uart1_default {
+	group1 {
+		drive-strength = <12>;
+		slew-rate = <1>;
+	};
+};

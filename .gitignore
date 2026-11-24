@@ -24,3 +24,8 @@ __Previews/
 Project Logs for */
 *.~(*).Zip
 *.backup-*
+
+# Firmware - saidas de build e sobras
+shield_ble_fw/**/build/
+*.vazio-backup
+*.orig
