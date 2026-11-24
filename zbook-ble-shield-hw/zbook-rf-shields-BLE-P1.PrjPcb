@@ -44,6 +44,7 @@ CrossRefPorts=3
 CrossRefCrossSheets=1
 CrossRefSheetEntries=0
 CrossRefFollowFromMainSettings=1
+CurrentVariant=PCB
 
 [Preferences]
 PrefsVaultGUID=
@@ -151,75 +152,61 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=
 
-[Document7]
-DocumentPath=zbook-rf-shields-BLE-P1.PcbLib
-AnnotationEnabled=1
-AnnotateStartValue=1
-AnnotationIndexControlEnabled=0
-AnnotateSuffix=
-AnnotateScope=All
-AnnotateOrder=-1
-DoLibraryUpdate=1
-DoDatabaseUpdate=1
-ClassGenCCAutoEnabled=1
-ClassGenCCAutoRoomEnabled=0
-ClassGenNCAutoScope=None
-DItemRevisionGUID=
-GenerateClassCluster=0
-DocumentUniqueId=NBAOCMQB
+[ProjectVariant1]
+UniqueId=4623d7c3-4e72-4dbd-b682-2926c6a7cfcf
+Description=UFL
+AllowFabrication=0
+ParameterCount=0
+VariationCount=0
+ParamVariationCount=0
 
-[Document8]
-DocumentPath=zbook-rf-shields-BLE-P1.SchLib
-AnnotationEnabled=1
-AnnotateStartValue=1
-AnnotationIndexControlEnabled=0
-AnnotateSuffix=
-AnnotateScope=All
-AnnotateOrder=-1
-DoLibraryUpdate=1
-DoDatabaseUpdate=1
-ClassGenCCAutoEnabled=1
-ClassGenCCAutoRoomEnabled=0
-ClassGenNCAutoScope=None
+[ProjectVariant2]
+UniqueId=d6ea21de-89f8-42f3-b42c-05e3ebb55995
+Description=PCB
+AllowFabrication=0
+ParameterCount=0
+VariationCount=0
+ParamVariationCount=0
+
+[GeneratedDocument1]
+DocumentPath=Project Outputs for zbook-rf-shields-BLE-P1\Design Rule Check - zbook-rf-shields-BLE-P1.html
 DItemRevisionGUID=
-GenerateClassCluster=0
-DocumentUniqueId=ZXRHXHET
 
 [Parameter1]
-Name=Website
-Value=https://edge.ufal.br
+Name=CheckedProject
+Value=Vinicius Carvalho
 
 [Parameter2]
-Name=VersionRevision
-Value=P1
+Name=Company
+Value=Universidade Federal de Alagoas
 
 [Parameter3]
-Name=VariantProject
-Value=PROTOTYPE
+Name=DesignedProject
+Value=Caio Oliveira
 
 [Parameter4]
-Name=TitleProject
-Value=Shield BLE
+Name=NumberProject
+Value=ZBOOK-RF-SHIELDS-BLE-P1
 
 [Parameter5]
 Name=ReleaseDate
 Value=26/09/2026
 
 [Parameter6]
-Name=NumberProject
-Value=ZBOOK-RF-SHIELDS-BLE-P1
+Name=TitleProject
+Value=Shield BLE
 
 [Parameter7]
-Name=DesignedProject
-Value=Caio Oliveira
+Name=VariantProject
+Value=PROTOTYPE
 
 [Parameter8]
-Name=Company
-Value=Universidade Federal de Alagoas
+Name=VersionRevision
+Value=P1
 
 [Parameter9]
-Name=CheckedProject
-Value=Vinicius Carvalho
+Name=Website
+Value=https://edge.ufal.br
 
 [Configuration1]
 Name=Sources
